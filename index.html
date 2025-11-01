@@ -1,39 +1,93 @@
-<!-- TODO 1: Create the HTML Boilerplate -->
-<DOCTYPE html>
-    <html lang="en">
-        <head>
-            <meta charset="UFT-8">
-            <title>All the projects I have made up until now</title>
-        </head>
-        
-        <body>
-            <h1>Kris's Portfolio</h1>
-            <h2>I'm a web developer</h2>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="Styles/style.css" />
+    <title>ESG</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+  </head>
+  <body>
+    <div class="fixed-scene">
+      
+    </div>
+    <!-- Background -->
+    <div class="bg" aria-hidden="true">
+      <img class="bg-piece wall" src="img/Wall.svg" alt="" />
+      <img class="bg-piece window" src="img/Window.svg" alt="" />
+      <img class="bg-piece floor" src="img/Floor.svg" alt="" />
+    </div>
 
-            <hr />
+    <!-- Stuff on top -->
+    <main class="content">
+      <div class="desk-setup">
+        <img src="img/Desk.svg" alt="Desk" class="desk" />
+        <img src="img/Monitor.svg" alt="Monitor" class="monitor" />
+        <object
+          data="img/Plant1.svg"
+          type="image/svg+xml"
+          class="plant1"
+        ></object>
+        <object
+          data="img/Plant2.svg"
+          type="image/svg+xml"
+          class="plant2"
+        ></object>
+        <object
+          data="img/Plant3.svg"
+          type="image/svg+xml"
+          class="plant3"
+        ></object>
+        <object
+          data="img/Paper1.svg"
+          type="image/svg+xml"
+          class="paper1"
+        ></object>
+        <object
+          data="img/Paper2.svg"
+          type="image/svg+xml"
+          class="paper2"
+        ></object>
+        <object
+          data="img/Paper3.svg"
+          type="image/svg+xml"
+          class="paper3"
+        ></object>
+        <object
+          data="img/Phone1.svg"
+          type="image/svg+xml"
+          class="phone1"
+        ></object>
+        <object
+          data="img/Phone2.svg"
+          type="image/svg+xml"
+          class="phone2"
+        ></object>
+        <object
+          data="img/Phone3.svg"
+          type="image/svg+xml"
+          class="phone3"
+        ></object>
+      </div>
+      <div class="map-container">
+        <object
+          id="worldMap"
+          data="img/world.svg"
+          type="image/svg+xml"
+        ></object>
+        <div class="controls">
+          <label
+            ><input type="checkbox" id="cb-env" checked /> Environmental</label
+          ><br />
+          <label><input type="checkbox" id="cb-soc" checked /> Social</label
+          ><br />
+          <label
+            ><input type="checkbox" id="cb-gov" checked /> Governance</label
+          >
+        </div>
+      </div>
+    </main>
 
-            <a href="./public/My-Movie-Rankings.html"><h3>My movie Rankings</h3></a>
-            <img src="./assets/images/movie-ranking.png" height="200" />    
-            <a href="./public/My-birthday-invite.html"><h3>My birthday invite</h3></a>
-            <img src="./assets/images/birthday-invite.png" height="200">
-
-            <hr />
-
-            <a href="./public/about.html">About me</a>
-            <a href="./public/contact.html">Contact me</a>
-
-
-        </body>
-<!-- TODO 2: Add Your previous projects' HTML into the public folder -->
-
-<!-- TODO 3: Take screenshots of your project previews and add the images to the images folder -->
-
-<!-- TODO 4: Add titles/subtitles etc. -->
-
-<!-- TODO 5: Add a link to the project pages -->
-
-<!-- TODO 6: Add images to show the project previews
-HINT for TODO 6: You can use the height attribute set to 200 to make the image smaller:
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-height -->
-
-<!-- TODO 7: Add the Contact Me and About Me page links -->
+    <script src="./Scripts/script.js"></script>
+  </body>
+</html>
