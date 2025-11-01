@@ -1,0 +1,350 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: auto;
+  overflow: hidden;
+  background-color: #202020;
+}
+
+.bg-piece {
+  position: absolute;
+  display: block;
+  object-fit: cover;
+  width: auto;
+  height: auto;
+  pointer-events: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.bg .wall {
+  left: 0;
+  top: 100;
+  width: 100%;
+  height: 85%;
+}
+
+.bg .window {
+  right: 0;
+  top: 0;
+  width: 35%;
+  height: 85%;
+}
+
+.bg .floor {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 15%;
+  width: 100%;
+}
+
+.content {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  pointer-events: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.desk-setup {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+}
+
+.desk {
+  display: block;
+  width: 100%;
+}
+
+.monitor {
+  position: absolute;
+  bottom: 99%;
+  left: 45%;
+  transform: translateX(-50%);
+  width: 66%;
+}
+
+.phone1 {
+  position: absolute;
+  bottom: 33%;
+  right: 53.5%;
+  width: 10%;
+  rotate: -5deg;
+}
+.phone2 {
+  position: absolute;
+  bottom: 34%;
+  right: 48%;
+  width: 10%;
+  rotate: 2deg;
+}
+.phone3 {
+  position: absolute;
+  bottom: 33%;
+  right: 43%;
+  width: 10%;
+  rotate: 12deg;
+}
+.paper1 {
+  position: absolute;
+  bottom: 41%;
+  left: 0%;
+  width: 24%;
+  rotate: 0deg;
+  pointer-events: auto 
+}
+
+.paper2 {
+  position: absolute;
+  bottom: 41%;
+  left: 13%;
+  width: 24%;
+  rotate: 0deg;
+}
+.paper3 {
+  position: absolute;
+  bottom: 40%;
+  left: 26%;
+  width: 24%;
+  rotate: -4deg;
+}
+.plant1 {
+  position: absolute;
+  bottom: 80%;
+  right: 22%;
+  width: 10%;
+}
+.plant2 {
+  position: absolute;
+  bottom: 80%;
+  right: 13%;
+  width: 10%;
+}
+.plant3 {
+  position: absolute;
+  bottom: 80%;
+  right: 5%;
+  width: 10%;
+}
+
+.map-container {
+  position: relative;
+  top: 3%;
+  left: 3%;
+  width: 32vw;
+  max-width: 720px;
+  aspect-ratio: 2 / 1;
+  border: 2px solid #111;
+  border-radius: 0px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+  overflow: visible;
+  transform-origin: top left;
+  will-change: transform;
+}
+
+#worldMap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  resize: none !important;
+  transform: translateY(10%);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform-origin: center center;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+}
+
+.controls {
+  position: absolute;
+  bottom: 3%;
+  left: 3%;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  padding: 0.3em 0.6em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  font-size: clamp(11px, 0.85vw, 14px);
+  line-height: 1.2;
+  width: auto;
+  pointer-events: auto;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.controls label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 1px 0;
+  white-space: nowrap;
+}
+
+.controls input {
+  transform: scale(0.8);
+}
+
+/* .popup {
+  position: absolute;
+  background: #808080;
+  border-radius: 8px;
+  width: 120px;
+  height: 80px;
+  display: none;
+  z-index: 999;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  margin-left: -12%;
+  cursor: pointer;
+} */
+
+
+.desk,
+.paper1,
+.paper2,
+.paper3,
+.plant1,
+.plant2,
+.plant3,
+.phone1,
+.phone2,
+.phone3 {
+  pointer-events: auto !important;
+  transition: filter 0.3s ease;
+  /* cursor: pointer !important; */
+}
+
+.paper1:hover, .paper2:hover, .paper3:hover, .plant1:hover, .plant2:hover, .plant3:hover, .phone1:hover, .phone2:hover, .phone3:hover{
+  cursor: pointer;
+  z-index: 10;
+  filter: brightness(0.85);
+}
+
+
+.map-zoom-lens {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  pointer-events: none;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+  z-index: 999;
+}
+
+.map-zoom-lens img {
+  position: absolute;
+  user-select: none;
+  pointer-events: none;
+  transform-origin: top left;
+  width: 150px;
+  height:150px;
+}
+
+.map-hover-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 20; 
+  background: transparent;
+  cursor: none; 
+}
+
+
+.popup {
+  position: absolute;
+  display: none;                /* shown via JS */
+  z-index: 1000;
+  background: rgba(255,255,255,0.97);
+  border: 1px solid #bdbdbd;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  padding: 0.75rem 0.9rem;
+  width: clamp(180px, 14vw, 260px);     /* scales with viewport */
+  pointer-events: auto;
+}
+
+.popup h4 {
+  margin: 0 0 0.5rem 0;
+  font: 600 clamp(12px, 1.1vw, 14px)/1.2 "Lato", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #222;
+}
+
+.popup .bars {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: clamp(8px, 0.9vw, 12px);
+  align-items: end;             /* align bars on baseline */
+  height: clamp(90px, 12vw, 140px); /* chart area height scales */
+}
+
+.popup .bar {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 6px;
+}
+
+.popup .bar .col {
+  border-radius: 4px;
+  background: #dcdcdc;          /* default gray; NL overridden to blue */
+  transition: transform 0.15s ease;
+}
+
+.popup .bar .col:hover {
+  transform: translateY(-3px);
+}
+
+.popup .bar label {
+  text-align: center;
+  font-size: clamp(10px, 0.9vw, 12px);
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.popup .note {
+  margin-top: 0.4rem;
+  font-size: clamp(9px, 0.85vw, 11px);
+  color: #666;
+}
+
+html {
+  zoom: 100%; /* locks global zoom baseline */
+}
+
+
+/* .popup .bar:nth-child(2) {
+  border: 3px solid #2196f3; 
+  background-color: white;
+} */
+
+
